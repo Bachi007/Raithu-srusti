@@ -1,0 +1,78 @@
+<html>
+<head>
+<link rel="stylesheet"href="main.css">
+<div>
+<h1><center>Raithu Srusti</center></h1>
+</head>
+
+<body >
+<style>
+body
+{
+background-image:url('31.jpg');
+}
+</style>
+<script>
+function check()
+{
+
+if(document.getElementById('fid').value=="")
+{
+alert("pls enter farmer id");
+document.getElementById('fid').style.bordercolor="red";
+return false;
+}
+
+if(document.getElementById('pswd').value=="")
+{
+alert("pls enter password");
+document.getElementById('pswd').style.bordercolor='red';
+return false;
+}
+}
+</script>
+
+
+<form action="formerloginvalid.jsp" method="get" onsubmit=" return check()">
+<center><h1>
+<a href="1 main project.html">home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="complaint.jsp">complaint</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="feedback.html">feed back</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="about us.html">about us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="contact.html">contact</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</h1>
+</center></div>
+<center>
+<h1><u>farmer login</u></h1><br>
+<font size="4">
+<table>
+<tr><td>
+
+farmer-id:</td><td><input type="text box" name="fid" id="fid" placeholder="farmer id"></input></td></tr><p>
+<tr><td>pass word:</td><td><input type="password" id=" pswd"name="pswd" placeholder="password"></td></tr></input>
+<p>
+
+</table><p>
+<tr><td><input type="submit" value="submit">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="reset">&nbsp;&nbsp;
+</form>
+<a href="1 main project.html"><input type="button" value="cancel"></td></tr></a>
+
+<%
+String mes=request.getParameter("mes");
+if( mes==null)
+{
+	
+}
+else
+{
+%>
+<h1><%= mes %></h1><%} %>
+</p>
+<center>you forget password...?&nbsp;<a href="fforgetpassword.jsp">click here</a></center>
+
+<center>don't have account?&nbsp;<a href="farreg.html">register here</a></center>
+</font>
+</center>
+
+</body>
+</html>

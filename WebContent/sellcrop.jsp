@@ -1,0 +1,113 @@
+<html>
+<head>
+<link rel="stylesheet"href="main.css">
+<div>
+<h1><center>Raithu Srusti</center></h1>
+</head>
+<body >
+<style>
+body
+{
+background-image:url('31.jpg');
+}
+</style>
+
+
+<script>
+function check()
+{
+
+if(document.getElementById('fid').value=="")
+{
+alert("pls enter farmer id");
+document.getElementById('fid').style.bordercolor="red";
+return false;
+}
+
+if(document.getElementById('fname').value=="")
+{
+alert("pls enter the former name");
+document.getElementById('fname').style.bordercolor='red';
+return false;
+}
+
+if(document.getElementById('cname').value=="")
+{
+alert("pls enter the crop name");
+document.getElementById('cname').style.bordercolor='red';
+return false;
+}
+
+if(document.getElementById('quant').value=="")
+{
+alert("pls enter the quantity");
+document.getElementById('quant').style.bordercolor='red';
+return false;
+}
+
+if(document.getElementById('price').value=="")
+{
+alert("pls enter the price ");
+document.getElementById('price').style.bordercolor='red';
+return false;
+}
+
+
+}
+</script>
+
+
+
+
+
+   <center><h2>
+  <a href="1 main project.html">home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="complaint.jsp">complaint</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="fcomplaintstatus.jsp">view complaint status</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="sellcrop.jsp">sell crop</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="farmtips.jsp">farming tips</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="1 main project.html">logout</a><p>
+</h2>
+
+</center> </div>
+
+
+<form action="sellcropdata.jsp"method="Get" onsubmit=" return check()">
+<p>
+<center>
+
+
+<h1><u>sell crop</u></h1>
+<table>
+<tr><td>fid:</td><td><input type="textbox" name="fid" id="fid" placeholder=" enter former id"></input></td></tr>
+<tr><td> fname name:</td><td><input type="textbox" name="fname" id="fname" placeholder="enter farmer name" ></input></td></tr>
+<tr><td>crop name:</td><td><input type="textbox" name="cname" id="cname" placeholder=" enter valid crop name"></input></td></tr>
+<tr><td>which season crop grown:</td><td>
+<select name="season" placeholder="select season"><option>.....</option><option value="kharif">kharif</option><option value="rabi">rabi</option></select></td></tr>
+<tr><td>quantity:</td><td><input type="textbox" name="quant"  id="quant" placeholder="enter the quantity in kgs"></input></td><td>in kgs.</td></tr>
+<tr><td>price:</td><td><input type="textbox" name="price" id="price" placeholder="enter the price in kgs"></input></td><td>in RS.</td></tr>
+<%// <tr><td>crop image:</td><td><input type="file" placeholder=" please select the crop image" name="cimage"></input></td></tr>%>
+
+</table><p>
+
+
+<input type="submit"value="submit"></input>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="reset"value="cancel"></input>
+<%
+String mes=request.getParameter("mes");
+if( mes==null)
+{
+	
+}
+else
+{
+%>
+<h1><%= mes %></h1><%} %>
+
+
+</center>
+</form>
+<center><h3> for see the  supplier crop requirements detail<a href="postadddetails.jsp"> click here</a></h3></center>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ page import="java.sql.*" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<style>
+body
+{
+background-image:url('img/img26.jpg');
+}
+</style>
+<%
+String sid= request.getParameter("sid");
+String sname=request.getParameter("sname");
+String pa=request.getParameter("pa");
+String mbno=request.getParameter("mbno");
+String pswd=request.getParameter("pswd");
+String eid=request.getParameter("eid");
+try
+{
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:ORCL1","scott","tiger");
+		String sqlQuery="insert into sreg values(?,?,?,?,?,?)";
+		PreparedStatement pst = con.prepareStatement(sqlQuery);
+		double mbno1=Double.parseDouble(mbno);
+		pst.setString(1,sid);
+		pst.setString(2,sname);
+		pst.setString(3, pa);
+		pst.setDouble(4,mbno1);
+		pst.setString(5,pswd);
+		pst.setString(6,eid);
+		int updateCount=pst.executeUpdate();
+		System.out.println("the number of are inserted="+updateCount);
+		con.commit();
+		System.out.println("hi11");
+		
+		con.close();
+		response.sendRedirect("addslogin.html");
+}
+catch(Exception e)
+{
+System.out.println("error");	
+response.sendRedirect("supreg.jsp?mes=registration failed");
+	
+}
+
+
+%>
+
+</body>
+</html>

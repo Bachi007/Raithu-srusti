@@ -1,0 +1,64 @@
+<html>
+<head>
+<link rel="stylesheet"href="main.css">
+<div>
+<h1><center>Raithu Srusti</center></h1>
+<body >
+
+<style>
+body
+{
+background-image:url('img22.jpg');
+}
+</style>
+
+<script>
+function check()
+{
+
+	if(document.getElementById('sid').value=="")
+	{
+	alert("pls enter supplier id");
+	document.getElementById('sid').style.bordercolor="red";
+	return false;
+	}
+	
+	if(document.getElementById('pswd').value=="")
+	{
+	alert("pls enter password");
+	document.getElementById('pswd').style.bordercolor="red";
+	return false;
+	}
+}
+</script>
+
+
+
+<center><h1>
+<a href="1 main project.html">home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="complaint.jsp">complaint</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="feedback.html">feed back</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="about us.html">about us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="contact.html">contact</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</h1>
+</center></div>
+<form action="suplogvalid.jsp" method="Get"  onsubmit=" return check()">
+<center>
+<h1><u>supplier login</u></h1><br></center><center>
+<table><tr><td>
+
+supp - id:</td><td><input type="text box" id="sid" placeholder="enter supplier id" name="sid" ></input></td><br>
+<tr><td>pass word:</td><td><input type="password"  id="pswd" placeholder=" enter password" name="pswd"></td></input>
+</table>
+</center>
+<p>
+<center>
+<input type="submit" value="submit">&nbsp;&nbsp;
+<input type="reset" value="cancel">
+<center>forget password?&nbsp;<a href="sforgetpassword.jsp">click here</a></center>
+
+</center><p>
+<center>don't have account?&nbsp;<a href="supreg.html">register here</a></center>
+</form>
+</body>
+</html>

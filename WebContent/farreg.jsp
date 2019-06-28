@@ -1,0 +1,152 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="stylesheet"href="main.css">
+<div>
+<h1><center>Raithu Srusti</center></h1>
+<center><h1>
+<a href="1 main project.html">home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="complaint.html">complaint</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="feedback.html">feed back</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="about us.html">about us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="contact.html">contact</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</h1>
+</center>
+</div>
+</head>
+<body>
+<style>
+body
+{
+background-image:url('31.jpg');
+}
+</style>
+<script>
+function check()
+{
+
+if(document.getElementById('fid').value=="")
+{
+alert("pls enter fid");
+document.getElementById('fid').style.bordercolor="red";
+return false;
+}
+if(document.getElementById('fname').value=="")
+{
+alert("pls enter fname");
+document.getElementById('fname').style.bordercolor='red';
+return false;
+}
+if(document.getElementById('pa').value=="")
+{
+alert("pls enter personal address");
+document.getElementById('pa').style.bordercolor='red';
+return false;
+}
+if((document.getElementById('mbno').value.length<10))
+{
+alert("pls enter valid mobile no");
+document.getElementById('mbno').style.bordercolor='red';
+return false;
+}
+if(document.getElementById('pswd').value=="")
+{
+alert("pls enter password");
+document.getElementById('pswd').style.bordercolor='red';
+return false;
+}
+if(document.getElementById('cpswd').value=="")
+{
+alert("pls enter confirm password");
+document.getElementById('cpswd').style.bordercolor='red';
+return false;
+}
+if(document.getElementById('cpswd').value!="")
+{
+	
+	
+        var password = document.getElementById("pswd").value;
+        var confirmPassword = document.getElementById("cpswd").value;
+        if (password != confirmPassword) 
+		{
+            alert("Passwords do not match.");
+            return false;
+	}
+}
+if(document.getElementById('eid').value=="")
+{
+alert("pls enter emailid");
+document.getElementById('eid').style.bordercolor='red';
+return false;
+}
+
+}
+</script>
+<form action="farmerreg.jsp"  onsubmit=" return check()" method="get">
+
+
+<table cellpadding="2" width="20%" bgcolor=""align="center" cellspacing="2">
+<font size="4">
+<tr>
+<td colspan=2>
+<center><font size=4><b><u>farmer Registration Form</u></b></font></center>
+<p>
+</td>
+</tr>
+
+<tr>
+<td>farmer id</td>
+<td><input type=text name="fid" id="fid" size="30" placeholder="farmer id" title="adhar no"></td>
+</tr>
+
+<tr>
+<td>farmer name</td>
+<td><input type="text" name="fname" id="fname"size="30" placeholder="farmer name"></td>
+</tr>
+<tr>
+<td>Personal Address</td>
+<td><input type="text" name="pa" id="pa" size="30" placeholder="Address"></td>
+</tr>
+<tr>
+<td>MobileNo</td>
+<td><input type="text" name="mbno" id="mbno" size="30" placeholder="mobile number"></td>
+</tr>
+<tr>
+<td>password</td>
+<td><input type="password" name="pswd" id="pswd" size="30" placeholder="password"></td>
+</tr>
+<tr>
+<td> confirm password</td>
+<td><input type="password" name="cpswd" id="cpswd" size="30" placeholder="conform password"></td>
+</tr>
+<tr>
+<td>EmailId</td>
+<td><input type="text" name="eid" id="eid" size="30" placeholder="For example asr@gmail.com"></td>
+</tr>
+</table><p>
+<center>
+<input type="submit" value="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="reset" value="reset"></input>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="addlogin.html">
+</input></a></center>
+</form>
+<center>
+<%
+String mes=request.getParameter("mes");
+if( mes==null)
+{
+}
+else
+{
+%>
+<h1><%= mes %></h1><%} %>
+</center>
+
+<p>
+<center>already have account?..<a href="farmerlogin.html">click here to login</a></center>
+</font>
+</form>
+</body>
+</html>

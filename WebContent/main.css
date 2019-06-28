@@ -1,0 +1,44 @@
+a
+{
+color:blue;
+text-decoration:none;
+}
+a:visited
+{
+color:blue;
+text-decoration:underline;
+}
+a:hover
+{
+color:green;
+text-decoration:underline;
+}
+a:active
+{
+color:yellow;
+text-decoration:none;
+}
+hr
+{
+margin:none;
+}
+div
+{
+background-image:url(img/12.jpg);/*color:#FF8C00;12*/
+background-size:100% 100%;
+/*#7FFF00#FF8C00#DEB887#DC143C#A52A2A;*/
+}
+
+.as{
+background-color:white;
+border:2px solid black;
+border-radius:5px;
+ width:200px;
+}
+.av{
+background-color:none;
+border:2px solid black;
+border-radius:5px;
+width:300px;
+}
+

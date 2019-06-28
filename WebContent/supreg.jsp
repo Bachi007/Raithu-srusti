@@ -1,0 +1,151 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link rel="stylesheet"href="main.css">
+<div>
+<h1><center>Raithu Srusti</center></h1>
+<body >
+<center><h1>
+<a href="1 main project.html">home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="complaint.jsp">complaint</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="feedback.html">feed back</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="about us.html">about us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="contact.html">contact</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</h1>
+</center></div>
+</head>
+<body>
+<style>
+body
+{
+background-image:url('img24.jpg');
+}
+</style>
+<script>
+function check()
+{
+
+if(document.getElementById('sid').value=="")
+{
+alert("pls enter sid");
+document.getElementById('sid').style.bordercolor="red";
+return false;
+}
+if(document.getElementById('sname').value=="")
+{
+alert("pls enter sname");
+document.getElementById('sname').style.bordercolor='red';
+return false;
+}
+if(document.getElementById('pa').value=="")
+{
+alert("pls enter personal address");
+document.getElementById('pa').style.bordercolor='red';
+return false;
+}
+if((document.getElementById('mbno').value.length<10))
+{
+alert("pls enter valid mobile no");
+document.getElementById('mbno').style.bordercolor='red';
+return false;
+}
+if(document.getElementById('pswd').value=="")
+{
+alert("pls enter password");
+document.getElementById('pswd').style.bordercolor='red';
+return false;
+}
+if(document.getElementById('cpswd').value=="")
+{
+alert("pls enter confirm password");
+document.getElementById('cpswd').style.bordercolor='red';
+return false;
+}
+if(document.getElementById('cpswd').value!="")
+{
+	
+	
+        var password = document.getElementById("pswd").value;
+        var confirmPassword = document.getElementById("cpswd").value;
+        if (password != confirmPassword) 
+		{
+            alert("Passwords do not match.");
+            return false;
+	}
+}
+if(document.getElementById('eid').value=="")
+{
+alert("pls enter emailid");
+document.getElementById('eid').style.bordercolor='red';
+return false;
+}
+
+}
+</script>
+
+
+<form action="suplierreg.jsp"method="Get" onsubmit=" return check()">
+<table cellpadding="2" width="20%" bgcolor=""align="center" cellspacing="2">
+<font size="4">
+<tr>
+<td colspan=2>
+<center><font size=4><b><u>supplier Registration Form</u></b></font></center>
+<p>
+</td>
+</tr>
+
+<tr>
+<td>supplier id</td>
+<td><input type=text name="sid" placeholder="supplierid" title="adhar no"id="sid"></td>
+</tr>
+
+<tr>
+<td>supplier name</td>
+<td><input type="text" name="sname" placeholder="supplioer name" id="sname"
+></td>
+</tr>
+<tr>
+<td>Personal Address</td>
+<td><input type="text" name="pa" placeholder="Address"
+id="pa" ></td>
+</tr>
+<tr>
+<td>MobileNo</td>
+<td><input type="text" name="mbno" id="mbno" placeholder=" mobile no" ></td>
+</tr>
+<tr>
+<td>password</td>
+<td><input type="password" name="pswd" id="pswd"  placeholder=" password"></td>
+</tr>
+<tr>
+<td> confirm password</td>
+<td><input type="password" name="confirm password" id="cpswd" placeholder="conform password"></td>
+</tr>
+<tr>
+<td>EmailId</td>
+<td><input type="text" name="eid" id="eid" placeholder="for eaxmple asr@gmail.com"></td>
+</tr>
+</table><p>
+<center>
+<input type="submit" value="submit">&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="reset" value="reset"></input></a>&nbsp;&nbsp;&nbsp;&nbsp;
+</input></a></center>
+</form>
+<center>
+<%
+String mes=request.getParameter("mes");
+if( mes==null)
+{
+}
+else
+{
+%>
+<h1><%= mes %></h1><%} %>
+</center>
+<p>
+<center>already have account?..<a href="slogin.html">click here to login</a></center>
+</font>
+</body>
+</html>
